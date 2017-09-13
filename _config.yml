@@ -31,6 +31,9 @@ theme: minima # https://github.com/jekyll/minima; also try minimal: https://gith
 plugins:
   - jekyll-feed
 
+collections:
+  - external_feed
+
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
