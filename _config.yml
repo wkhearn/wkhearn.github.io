@@ -23,10 +23,11 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://kennyhearn.com" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: wkhearn
 github_username:  wkhearn
+linkedin_username:  kennyhearn
 
 # Build settings
 markdown: kramdown
-theme: minima # https://github.com/jekyll/minima; also try minimal: https://github.com/pages-themes/minimal, slate: https://github.com/pages-themes/slate, cayman: https://github.com/pages-themes/cayman, 
+theme: minima # https://github.com/jekyll/minima; also try minimal: https://github.com/pages-themes/minimal, slate: https://github.com/pages-themes/slate, cayman: https://github.com/pages-themes/cayman,
 plugins:
   - jekyll-feed
 
