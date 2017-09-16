@@ -5,7 +5,8 @@ date:   2017-09-12 16:59:56 -0400
 categories: blog welcome
 permalink: /blog/:title.html
 ---
-This is just a placeholder entry until I migrate over my blog posts from Medium. Until then, feel free to checkout my blog [here][medium-blog].
+This is just a placeholder entry until I migrate over my blog posts from Medium. Until then, feel free to checkout my blog
+<a href="https://github.com/wkhearn" target="_blank_">here</a>.
 
 
 Jekyll also offers powerful support for code snippets, which I'll be sure to take advantage of. Here is an example:
