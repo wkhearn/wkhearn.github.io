@@ -5,8 +5,5 @@ permalink: /projects/
 ---
 
 Check out my final project while at Flatiron, Dreamteam:
-[Website][dreamteam] /
-[GitHub](https://github.com/wkhearn/dream_team_client)
-
-
-[dreamteam]: http://www.dreamteam-football.com
+<a href="http://www.dreamteam-football.com" target="_blank_">Website</a> /
+<a href="https://github.com/wkhearn/dream_team_client" target="_blank_">GitHub</a>
