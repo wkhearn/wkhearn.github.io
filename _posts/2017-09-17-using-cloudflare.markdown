@@ -6,4 +6,6 @@ categories: blog
 permalink: /blog/:title.html
 ---
 
-All the good things about using a CDN for performance and security
+All the good things about using a CDN for performance and security.
+
+Flexible vs Full SSL? Github pages takes care of their users, but...
