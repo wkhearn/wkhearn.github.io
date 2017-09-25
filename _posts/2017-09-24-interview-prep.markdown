@@ -6,6 +6,4 @@ categories: blog
 permalink: /blog/:title.html
 ---
 
-I'd probably had a job right now if I had read the post I'm about to create before my last technical interview.
-
 Add some components
