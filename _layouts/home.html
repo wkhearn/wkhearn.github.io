@@ -4,10 +4,24 @@ layout: default
 
 <div class="home">
 
+  {% comment %}
   <h1 class="page-heading">Blog Posts</h1>
+  {% endcomment %}
+  <h1 class="page-heading" style="font-family: Roboto, sans-serif;">Coming Soon.</h1>
+
+
+  <h3 style="margin-top: 50px; font-family: Roboto, sans-serif;">Things:</h3>
+  <ul style="font-size: 16px; font-family: Roboto, sans-serif;">
+    <li><a href="https://github.com/wkhearn">github</a></li>
+    <li><a href="https://linkedin.com/in/kennyhearn">linkedin</a></li>
+    <li><a href="https://facebook.com/wkhearn">facebook</a></li>
+    <li>dev at <a href="https://snowehome.com">SNOWE</a></li>
+  </ul>
+
 
   {{ content }}
 
+  {% comment %}
   <ul class="post-list">
     {% for post in site.posts %}
       <li>
@@ -20,4 +34,5 @@ layout: default
       </li>
     {% endfor %}
   </ul>
+  {% endcomment %}
 </div>
