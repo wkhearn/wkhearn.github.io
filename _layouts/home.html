@@ -7,8 +7,15 @@ layout: default
   {% comment %}
   <h1 class="page-heading">Blog Posts</h1>
   {% endcomment %}
+  {% comment %}
   <h1 class="page-heading" style="margin-top: 50px; font-family: Roboto, sans-serif;">Coming soon.</h1>
+  {% endcomment %}
 
+  <div class="gif">
+    <div class="container">
+      <img id="share_gif" alt="">
+    </div>
+  </div>
 
   <h3 style="margin-top: 50px; font-family: Roboto, sans-serif;">Things:</h3>
   <ul style="font-size: 16px; font-family: Roboto, sans-serif;">
@@ -36,3 +43,88 @@ layout: default
   </ul>
   {% endcomment %}
 </div>
+
+<script type='text/javascript' src='config.js'></script>
+<script>
+  // url Async requesting function
+  function httpGetAsync(theUrl, callback) {
+      // create the request object
+      var xmlHttp = new XMLHttpRequest();
+      // set the state change callback to capture when the response comes in
+      xmlHttp.onreadystatechange = function() {
+          if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+              callback(xmlHttp.responseText);
+          }
+      }
+      // open as a GET call, pass in the url and set async = True
+      xmlHttp.open("GET", theUrl, true);
+      // call send with no params as they were passed in on the url string
+      xmlHttp.send(null);
+      return;
+  }
+
+  // callback for trending top 25 GIFs
+  function tenorCallback_trending(responsetext) {
+      // parse the json response
+      var response_objects = JSON.parse(responsetext);
+      top_25_gifs = response_objects["results"];
+      var random_num = Math.floor(Math.random() * 25)
+      // load the GIFs -- for our example we will load the first GIFs preview size (nanogif) and share size (tinygif)
+      // document.getElementById("preview_gif").src = top_10_gifs[0]["media"][0]["nanogif"]["url"];
+      document.getElementById("share_gif").src = top_25_gifs[random_num]["media"][0]["tinygif"]["url"];
+      return;
+  }
+
+  // function to call the trending and category endpoints
+  function grab_data(anon_id) {
+      // set the apikey and limit
+      var apikey = config.TENOR_API_KEY;
+      var lmt = 25;
+      // test search term
+      // var search_term = "excited";
+      // get the top 25 trending GIFs (updated through out the day) - using the default locale of en_US
+      // var trending_url = "https://api.tenor.com/v1/trending?key=" + apikey + "&limit=" + lmt + "&anon_id" + anon_id;
+      // Original trending_url commented out since I am not using anon_id, but am not going to rewrite all of the functions
+      var trending_url = "https://api.tenor.com/v1/trending?key=" + apikey + "&limit=" + lmt;
+      // var search_url = "https://api.tenor.com/v1/search?tag=" + search_term + "&key=" + apikey + "&limit=" + lmt + "&anon_id=" + anon_id;
+      httpGetAsync(trending_url,tenorCallback_trending);
+      // httpGetAsync(search_url,tenorCallback_trending);
+      // data will be loaded by each call's callback
+      return;
+  }
+
+
+  // callback for anonymous id -- for first time users
+  function tenorCallback_anonid(responsetext) {
+      // parse the json response
+      var response_objects = JSON.parse(responsetext);
+      anon_id = response_objects["anon_id"];
+      // pass on to grab_data
+      grab_data(anon_id);
+  }
+
+  // SUPPORT FUNCTIONS ABOVE
+  // MAIN BELOW
+
+  // if returning user, grab their stored  anonymous ID and jump directly to getting data
+  // anon_id = <from cookies>
+  // anon_set = true;
+  // grab_data(anon_id);
+
+  // else first time user
+  var apikey = config.TENOR_API_KEY;
+  var url = "https://api.tenor.com/v1/anonid?key=" + apikey;
+
+  // start the flow by getting a new anonymous id and having the callback pass it to grab_data
+  httpGetAsync(url,tenorCallback_anonid);
+</script>
+<style>
+  #share_gif {
+    width: 75%;
+  }
+  .container {
+    position: relative;
+    text-align: center;
+    color: white;
+  }
+</style>
