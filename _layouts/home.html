@@ -81,14 +81,14 @@ layout: default
       var apikey = config.TENOR_API_KEY;
       var lmt = 25;
       // test search term
-      // var search_term = "excited";
+      var search_term = "corgi";
       // get the top 25 trending GIFs (updated through out the day) - using the default locale of en_US
       // var trending_url = "https://api.tenor.com/v1/trending?key=" + apikey + "&limit=" + lmt + "&anon_id" + anon_id;
       // Original trending_url commented out since I am not using anon_id, but am not going to rewrite all of the functions
-      var trending_url = "https://api.tenor.com/v1/trending?key=" + apikey + "&limit=" + lmt;
-      // var search_url = "https://api.tenor.com/v1/search?tag=" + search_term + "&key=" + apikey + "&limit=" + lmt + "&anon_id=" + anon_id;
-      httpGetAsync(trending_url,tenorCallback_trending);
-      // httpGetAsync(search_url,tenorCallback_trending);
+      // var trending_url = "https://api.tenor.com/v1/trending?key=" + apikey + "&limit=" + lmt;
+      var search_url = "https://api.tenor.com/v1/search?tag=" + search_term + "&key=" + apikey + "&limit=" + lmt + "&anon_id=" + anon_id;
+      // httpGetAsync(trending_url,tenorCallback_trending);
+      httpGetAsync(search_url,tenorCallback_trending);
       // data will be loaded by each call's callback
       return;
   }
