@@ -3,20 +3,6 @@ layout: default
 ---
 
 <div class="home">
-
-  {% comment %}
-  <h1 class="page-heading">Blog Posts</h1>
-  {% endcomment %}
-  {% comment %}
-  <h1 class="page-heading" style="margin-top: 50px; font-family: Roboto, sans-serif;">Coming soon.</h1>
-  {% endcomment %}
-
-  <div class="gif">
-    <div class="container">
-      <img id="share_gif" alt="">
-    </div>
-  </div>
-
   <h3 style="margin-top: 50px;">Things:</h3>
   <ul style="font-size: 16px;">
     <li>github: <a style="color: black;" target="_blank" rel="noopener" href="https://github.com/wkhearn">wkhearn</a></li>
@@ -24,24 +10,14 @@ layout: default
     <li>facebook: <a style="color: black;" target="_blank" rel="noopener" href="https://facebook.com/wkhearn">wkhearn</a></li>
     <li>dev @ <a style="color: black;" target="_blank" rel="noopener" href="https://snowehome.com">SNOWE</a></li>
   </ul>
-
-
+    
+  <div class="gif">
+    <div class="container">
+      <img id="share_gif" alt="">
+    </div>
+  </div>
+    
   {{ content }}
-
-  {% comment %}
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
-        <span class="post-meta">{{ post.date | date: date_format }}</span>
-
-        <h2>
-          <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
-  {% endcomment %}
 </div>
 
 <script type='text/javascript' src='config.js'></script>
@@ -119,15 +95,9 @@ layout: default
   httpGetAsync(url,tenorCallback_anonid);
 </script>
 <style>
-  #share_gif {
-    width: 75%;
-  }
-  @media screen and (max-width: 499px) {
-    #share_gif {
-      width: 100%;
-    }
-  }
   .container {
+    max-width: 75%;
+    margin: auto;
     position: relative;
     text-align: center;
     color: white;
