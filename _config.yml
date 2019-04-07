@@ -27,7 +27,7 @@ linkedin_username:  kennyhearn
 
 # Build settings
 markdown: kramdown
-theme: jekyll-theme-minimal
+# theme: jekyll-theme-minimal
 plugins:
   - jekyll-feed
 
