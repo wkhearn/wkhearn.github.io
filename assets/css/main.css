@@ -2265,11 +2265,11 @@ input, select, textarea {
 	@media screen and (max-width: 480px) {
 		form > .fields {
 			width: calc(100% + 3em);
-			margin: -1.5em 0 2em -1.5em;
+			margin: 0.5em 0 2em -1.5em;
 		}
 
 		form > .fields .field {
-			padding: 1.5em 0 0 1.5em;
+			padding: 0.5em 0 0 1.5em;
 			width: calc(100% - 1.5em);
 		}
 
@@ -2283,6 +2283,10 @@ input, select, textarea {
 
 		form > .fields .field.quarter {
 			width: calc(100% - 1.5em);
+		}
+
+		label {
+			margin-bottom: 0.25em;
 		}
 	}
 
