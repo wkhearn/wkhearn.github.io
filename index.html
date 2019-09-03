@@ -45,9 +45,9 @@
 					<nav>
 						<ul>
 							<li><a href="#intro">Welcome</a></li>
-							<li><a href="#one">Who we are</a></li>
-							<li><a href="#two">What we do</a></li>
-							<li><a href="#three">Get in touch</a></li>
+							<!-- <li><a href="#one">Who</a></li>
+							<li><a href="#two">What</a></li> -->
+							<li><a href="#three">How</a></li>
 						</ul>
 					</nav>
 				</div>
@@ -59,17 +59,18 @@
 				<!-- Intro -->
 					<section id="intro" class="wrapper style1 fullscreen fade-up">
 						<div class="inner">
-							<h1>Hyperspace</h1>
-							<p>Just another fine responsive site template designed by <a href="http://html5up.net">HTML5 UP</a><br />
-							and released for free under the <a href="http://html5up.net/license">Creative Commons</a>.</p>
-							<ul class="actions">
-								<li><a href="#one" class="button scrolly">Learn more</a></li>
-							</ul>
+							<div class="copy">
+								<h1>Kenny Hearn</h1>
+								<p>Just another web developer creating things on the internet. Browse some of my projects below, or feel free to check out my day job: <a href="https://snowehome.com" target="_blank" rel="noopener noreferrer">Snowe</a>.</p>
+								<!-- <ul class="actions">
+									<li><a href="#one" class="button scrolly">Learn more</a></li>
+								</ul> -->
+							</div>
 						</div>
 					</section>
 
 				<!-- One -->
-					<section id="one" class="wrapper style2 spotlights">
+					<!-- <section id="one" class="wrapper style2 spotlights">
 						<section>
 							<a href="#" class="image"><img src="images/pic01.jpg" alt="" data-position="center center" /></a>
 							<div class="content">
@@ -106,10 +107,10 @@
 								</div>
 							</div>
 						</section>
-					</section>
+					</section> -->
 
 				<!-- Two -->
-					<section id="two" class="wrapper style3 fade-up">
+					<!-- <section id="two" class="wrapper style3 fade-up">
 						<div class="inner">
 							<h2>What we do</h2>
 							<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet imperdiet est velit quis lorem.</p>
@@ -149,59 +150,71 @@
 								<li><a href="generic.html" class="button">Learn more</a></li>
 							</ul>
 						</div>
-					</section>
+					</section> -->
 
 				<!-- Three -->
 					<section id="three" class="wrapper style1 fade-up">
 						<div class="inner">
-							<h2>Get in touch</h2>
-							<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet imperdiet est velit quis lorem.</p>
+							<div class="copy">
+								<h2>Get in touch</h2>
+								<p>I'm always looking to help plan, strategize, create, or execute on new and interesting projects. Reach out if you need help with your next website, e-commerce business, app idea, email campaign, or fantasy football team.</p>
+							</div>
 							<div class="split style1">
 								<section>
-									<form method="post" action="#">
+									<form name="simple-contact-form" accept-charset="utf-8" action="https://formspree.io/wkhearn@gmail.com"
+										method="post">
 										<div class="fields">
 											<div class="field half">
-												<label for="name">Name</label>
-												<input type="text" name="name" id="name" />
+												<label for="full-name">Name</label>
+												<input type="text" name="name" id="full-name" required="">
 											</div>
 											<div class="field half">
-												<label for="email">Email</label>
-												<input type="text" name="email" id="email" />
+												<label for="email-address">Email</label>
+												<input type="email" name="_replyto" id="email-address" required="">
 											</div>
 											<div class="field">
 												<label for="message">Message</label>
-												<textarea name="message" id="message" rows="5"></textarea>
+												<textarea rows="5" name="message" id="message" required=""></textarea>
 											</div>
+											<input type="hidden" name="_subject" id="email-subject" value="Contact Form Submission">
 										</div>
 										<ul class="actions">
-											<li><a href="" class="button submit">Send Message</a></li>
+											<li>
+												<input class="button submit" type="submit" value="Send Message">
+											</li>
 										</ul>
 									</form>
 								</section>
 								<section>
 									<ul class="contact">
+										<li><span>NYC | Nashville</span></li>
 										<li>
-											<h4>Address</h4>
-											<span>12345 Somewhere Road #654<br />
-											Nashville, TN 00000-0000<br />
-											USA</span>
-										</li>
-										<li>
-											<h4>Email</h4>
-											<a href="#">user@untitled.tld</a>
-										</li>
-										<li>
-											<h4>Phone</h4>
-											<span>(000) 000-0000</span>
-										</li>
-										<li>
-											<h4>Social</h4>
 											<ul class="icons">
-												<li><a href="#" class="fa-twitter"><span class="label">Twitter</span></a></li>
-												<li><a href="#" class="fa-facebook"><span class="label">Facebook</span></a></li>
-												<li><a href="#" class="fa-github"><span class="label">GitHub</span></a></li>
-												<li><a href="#" class="fa-instagram"><span class="label">Instagram</span></a></li>
-												<li><a href="#" class="fa-linkedin"><span class="label">LinkedIn</span></a></li>
+												<li>
+													<a href="https://twitter.com/wkhearn" class="fa-twitter"  target="_blank" rel="noopener noreferrer">
+														<span class="label">Twitter</span>
+													</a>
+												</li>
+												<li>
+													<a href="https://facebook.com/wkhearn" class="fa-facebook"  target="_blank" rel="noopener noreferrer">
+														<span class="label">Facebook</span>
+													</a>
+												</li>
+												<li>
+													<a href="https://github.com/wkhearn" class="fa-github"  target="_blank" rel="noopener noreferrer">
+														<span class="label">GitHub</span>
+													</a>
+												</li>
+												<li>
+													<a href="https://instagram.com/kennyhearn" class="fa-instagram"  target="_blank" rel="noopener noreferrer">
+														<span class="label">Instagram</span>
+													</a>
+												</li>
+												<li>
+													<a href="https://https://www.linkedin.com/in/kennyhearn" class="fa-linkedin"  target="_blank" rel="noopener noreferrer">
+														<span class="label">LinkedIn</span>
+													</a>
+												</li>
 											</ul>
 										</li>
 									</ul>
