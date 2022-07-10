@@ -325,8 +325,11 @@ ul.icons li > a:before, ul.icons li > span:before {
 	text-transform: none !important;
 }
 
-li a:hover {
+li a {
 	border-bottom-color: transparent;
+}
+
+li a:hover {
 	color: #c5c5c5;
 }
 
