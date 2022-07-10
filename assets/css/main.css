@@ -210,8 +210,8 @@ h6 {
 /* Begin Specific Styling */
 /* HTML Overall */
 body {
-	background-color: #191718;
-	color: #fff;
+	background-color: #fff;
+	color: #191718;
 	/* height: 100vh;
 	width: 100vw; */
 	display: flex;
@@ -346,4 +346,12 @@ li a {
 	ul.contact span, ul.contact a {
 		font-size: 0.9em;
 	}
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #191718;
+		color: #fff;
+  }
 }
