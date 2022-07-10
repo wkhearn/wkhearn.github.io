@@ -224,9 +224,10 @@ body {
 h1 {
 	font-size: 42px;
 	font-weight: 800;
-	margin: 0 0 0.5em 0;
+	margin: 0 auto 0.5em;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
+	width: fit-content;
 	/* background-image: linear-gradient(to right top, #00359f 20%, #00ffa8 50%, #9d947d 65%); */
 	/* background-image: linear-gradient(to right top, #604C7C 0%, #2fdaef 50%, #20825A 100%); */
 	/* background-image: linear-gradient(180deg, rgba(255,255,255,0) 60%, #ffffff),linear-gradient(70deg, #ddf4ff 32%, #dafbe1); */
@@ -360,12 +361,13 @@ li a {
 		color: #fafafa;
   }
 	h1 {
-		background-image: linear-gradient(to right top, #00359f 20%, #00ffa8 50%, #9d947d 65%);
+		background-image: linear-gradient(80deg, #b0e4ea 33%, #809fff 75%);
 	}
 	a {
-		background-image: linear-gradient(to right top, #604C7C 0%, #2fdaef 50%, #20825A 100%);
+		/* background: linear-gradient(to right top, #604C7C 0%, #2fdaef 50%, #20825A 100%) left bottom no-repeat; */
+		background: linear-gradient(80deg, #b0e4ea 33%, #809fff 75%) left bottom no-repeat;
 	}
 	a.button {
-		background-image: linear-gradient(80deg, #b0e4ea 33%, #809fff 75%);
+		background: linear-gradient(80deg, #b0e4ea 33%, #809fff 75%);
 	}
 }
