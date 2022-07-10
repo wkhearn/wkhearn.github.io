@@ -233,6 +233,7 @@ h1 {
 	/* background-image: linear-gradient(to right, rgb(129, 118, 181), rgb(118, 196, 226)); */
 	/* background-image: linear-gradient(to right top, #604C7C 0%, #2fdaef 50%, #20825A 100%); */
 	background-image: linear-gradient(80deg, #b0e4ea 33%, #d7b4f3 75%);
+	/* background-image: linear-gradient(80deg, #b0e4ea 33%, #809fff 75%); */
 }
 
 #main p {
