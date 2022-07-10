@@ -89,7 +89,7 @@ html {
 }
 
 body {
-	background: #ffffff;
+	background: #fff;
 }
 
 body.is-preload *, body.is-preload *:before, body.is-preload *:after {
@@ -105,7 +105,7 @@ body.is-preload *, body.is-preload *:before, body.is-preload *:after {
 
 /* Type */
 body, input, select, textarea {
-	color: #0c051d;
+	color: #191718;
 	font-family: -apple-system, BlinkMacSystemFont, 'Open Sans', Ubuntu, Helvetica Neue, sans-serif;
 	font-size: 16px;
 	font-weight: normal;
@@ -127,11 +127,11 @@ a {
 
 a:hover {
 	border-bottom-color: transparent;
-	color: #0c051d;
+	color: #c5c5c5;
 }
 
 strong, b {
-	color: #0c051d;
+	color: #191718;
 	font-weight: bold;
 }
 
@@ -216,7 +216,7 @@ h6 {
 /* HTML Overall */
 body {
 	background-color: #191718;
-	color: white;
+	color: #fff;
 	height: 100vh;
 	width: 100vw;
 	display: flex;
@@ -231,7 +231,7 @@ body {
 h1 {
 	font-size: 42px;
 	font-weight: 800;
-	margin: 0;
+	margin: 0 0 0.5em 0;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	background-image: linear-gradient(to right top, #00359f 20%, #00ffa8 50%, #9d947d 65%);
@@ -243,6 +243,7 @@ h1 {
 
 #main p {
 	max-width: 70ch;
+	margin-bottom: 3em;
 }
 
 a.button {
@@ -258,12 +259,11 @@ a.button {
 
 a:hover {
 	border-bottom-color: transparent;
-	color: #c5c5c5;
 }
 
 a.button:hover {
 	border-bottom-color: transparent;
-	color: #0c051d;
+	color: #c5c5c5;
 }
 
 /* Footer */
@@ -327,10 +327,6 @@ ul.icons li > a:before, ul.icons li > span:before {
 
 li a {
 	border-bottom-color: transparent;
-}
-
-li a:hover {
-	color: #c5c5c5;
 }
 
 @media screen and (max-width: 736px) {
