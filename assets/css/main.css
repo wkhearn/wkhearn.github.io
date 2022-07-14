@@ -250,7 +250,7 @@ a {
   padding-bottom: 2px;
 }
 
-a:hover {
+a:hover, a:focus, a:active {
 	border-bottom-color: transparent;
 	color: #c5c5c5;
 }
@@ -273,9 +273,9 @@ a.button {
   transition: all .4s ease-in-out;
 }
 
-a.button:hover {
+a.button:hover, a.button:focus, a.button:active {
 	border-bottom-color: transparent;
-	color: #c5c5c5;
+	color: #fafafa;
 	background-position: 100% 0;
   moz-transition: all .4s ease-in-out;
   -o-transition: all .4s ease-in-out;
