@@ -13,6 +13,12 @@ body {
  height: var(--app-height);
 }
 
+@media screen and (max-height: 420px) {
+	html, body {
+		min-height: calc(var(--app-height) + 52px);
+	}
+}
+
 /* Starts Resets and Basic */
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
