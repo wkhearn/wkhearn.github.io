@@ -15,7 +15,7 @@ body {
 
 @media screen and (max-height: 420px) {
 	html, body {
-		min-height: calc(var(--app-height) + 52px);
+		min-height: calc(var(--app-height) + 100px);
 		overflow: scroll;
 	}
 }
