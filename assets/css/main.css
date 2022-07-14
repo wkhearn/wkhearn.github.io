@@ -368,7 +368,10 @@ li a {
 		background-repeat: no-repeat;
 	}
 	a.button {
-		background: linear-gradient(80deg, #a2facf 0%, #809fff 100%);
+		background-image: linear-gradient(80deg, #a2facf 0%, #809fff 100%);
 		box-shadow: 0 4px 15px 0 rgb(128 160 255 / 75%);
+	}
+	a.button:hover, a.button:focus, a.button:active {
+		color: #fafafa;
 	}
 }
