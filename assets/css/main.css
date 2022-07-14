@@ -111,6 +111,7 @@ body.is-preload *, body.is-preload *:before, body.is-preload *:after {
 	-ms-animation: none !important;
 	animation: none !important;
 	-moz-transition: none !important;
+	-o-transition: none !important;
 	-webkit-transition: none !important;
 	-ms-transition: none !important;
 	transition: none !important;
@@ -237,10 +238,11 @@ h1 {
 }
 
 a {
-	-moz-transition: all 0.4s ease-in-out;
-	-webkit-transition: all 0.4s ease-in-out;
-	-ms-transition: all 0.4s ease-in-out;
-	transition: all 0.4s ease-in-out;
+	-moz-transition: all 0.4s;
+	-o-transition: all 0.4s;
+	-webkit-transition: all 0.4s;
+	-ms-transition: all 0.4s;
+	transition: all 0.4s;
 	color: inherit;
 	text-decoration: none;
 	background-image: linear-gradient(to right, #fc6076, #ff9a44, #ef9d43, #e75516);
@@ -253,6 +255,7 @@ a {
 a:hover, a:focus, a:active {
 	border-bottom-color: transparent;
 	color: #c5c5c5;
+	background-size: 1000% 1px;
 }
 
 a.button {
@@ -267,20 +270,22 @@ a.button {
 	background-image: linear-gradient(to right, #fc6076, #ff9a44, #ef9d43, #e75516);
   box-shadow: 0 0px 15px 0 rgb(252 104 110 / 75%);
   background-size: 300% 100%;
-  moz-transition: all 0.4s ease-in-out;
-  -o-transition: all 0.4s ease-in-out;
-  -webkit-transition: all 0.4s ease-in-out;
-  transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s;
+	-o-transition: all 0.4s;
+	-webkit-transition: all 0.4s;
+	-ms-transition: all 0.4s;
+	transition: all 0.4s;
 }
 
 a.button:hover, a.button:focus, a.button:active {
 	border-bottom-color: transparent;
 	color: #fafafa;
 	background-position: 100% 0;
-  moz-transition: all 0.4s ease-in-out;
-  -o-transition: all 0.4s ease-in-out;
-  -webkit-transition: all 0.4s ease-in-out;
-  transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s;
+	-o-transition: all 0.4s;
+	-webkit-transition: all 0.4s;
+	-ms-transition: all 0.4s;
+	transition: all 0.4s;
 }
 
 /* Footer */
@@ -341,7 +346,11 @@ ul.icons li > a:before, ul.icons li > span:before {
 	font-style: normal;
 	font-weight: normal;
 	text-transform: none !important;
-	transition: all 0.4s ease-in-out;
+	-moz-transition: all 0.4s;
+	-o-transition: all 0.4s;
+	-webkit-transition: all 0.4s;
+	-ms-transition: all 0.4s;
+	transition: all 0.4s;
 }
 ul.icons li > a:hover:before, ul.icons li > span:hover:before {
 		background-image: linear-gradient(to right, #fc6076, #ff9a44, #ef9d43, #e75516);
