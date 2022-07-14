@@ -343,6 +343,13 @@ ul.icons li > a:before, ul.icons li > span:before {
 	text-transform: none !important;
 	transition: all 0.4s ease-in-out;
 }
+ul.icons li > a:hover:before, ul.icons li > span:hover:before {
+		background-image: linear-gradient(to right, #fc6076, #ff9a44, #ef9d43, #e75516);
+		box-shadow: 0 0px 15px 0 rgb(252 104 110 / 75%);
+  	-webkit-background-clip: text;
+  	-webkit-text-fill-color: transparent;
+		box-shadow: 0 0px 30px rgb(252 104 110 / 75%);
+	}
 
 li a {
 	border-bottom-color: transparent;
@@ -378,14 +385,9 @@ li a {
 		background-size: 1000% 100%;
 	}
 	ul.icons li > a:hover:before, ul.icons li > span:hover:before {
-		-moz-osx-font-smoothing: grayscale;
-		-webkit-font-smoothing: antialiased;
-		font-family: FontAwesome;
-		font-style: normal;
-		font-weight: normal;
-		text-transform: none !important;
 		background-image: linear-gradient(80deg, #a2facf 0%, #809fff 100%);
   	-webkit-background-clip: text;
   	-webkit-text-fill-color: transparent;
+		text-shadow: 0 0px 30px rgb(128 160 255 / 75%);
 	}
 }
