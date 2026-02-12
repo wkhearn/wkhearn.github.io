@@ -5,12 +5,12 @@
 		<meta charset="utf-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<meta name="description" content="Internet Things" />
-		<meta property="og:description" content="Internet Things" />
+		<meta name="description" content="Kenny Hearn — CTO at InHouse. I make software." />
+		<meta property="og:description" content="Kenny Hearn — CTO at InHouse. I make software." />
 
 		<meta name="color-scheme" content="dark light">
-		<meta name="theme-color" content="#fafafa" media="(prefers-color-scheme: light)">
-		<meta name="theme-color" content="#191718" media="(prefers-color-scheme: dark)">
+		<meta name="theme-color" content="#f6f6f5" media="(prefers-color-scheme: light)">
+		<meta name="theme-color" content="#1a1d21" media="(prefers-color-scheme: dark)">
 		
 		<!-- Google Tag Manager -->
 		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -20,6 +20,9 @@
 		})(window,document,'script','dataLayer','GTM-MNQGXZC');</script>
 		<!-- End Google Tag Manager -->
 		
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<link rel="canonical" href="https://kennyhearn.com/">
@@ -44,6 +47,25 @@
 			appHeight()
 		</script>
 
+		<!-- Theme switcher (dropdown) -->
+		<div class="theme-switcher-wrap" id="theme-switcher-wrap">
+			<button type="button" class="theme-trigger fa fa-desktop" id="theme-trigger" aria-label="Theme" aria-haspopup="true" aria-expanded="false" title="Theme"></button>
+			<div class="theme-dropdown" id="theme-dropdown" role="menu" aria-label="Theme options" hidden>
+				<button type="button" class="theme-option" data-theme="system" role="menuitem">
+					<span class="fa fa-desktop"></span>
+					<span class="theme-option-label">System</span>
+				</button>
+				<button type="button" class="theme-option" data-theme="light" role="menuitem">
+					<span class="fa fa-sun-o"></span>
+					<span class="theme-option-label">Light</span>
+				</button>
+				<button type="button" class="theme-option" data-theme="dark" role="menuitem">
+					<span class="fa fa-moon-o"></span>
+					<span class="theme-option-label">Dark</span>
+				</button>
+			</div>
+		</div>
+
 		<!-- Main -->
 		<section id="main" class="wrapper">
 			<div class="inner">
@@ -65,11 +87,6 @@
 							<li>
 								<a href="https://instagram.com/kennyhearn" class="fa-instagram"  target="_blank" rel="noopener noreferrer">
 									<span class="label">Instagram</span>
-								</a>
-							</li>
-							<li>
-								<a href="https://twitter.com/wkhearn" class="fa-twitter"  target="_blank" rel="noopener noreferrer">
-									<span class="label">Twitter</span>
 								</a>
 							</li>
 							<li>
@@ -96,6 +113,82 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script>
+				(function() {
+					var STORAGE_KEY = 'theme';
+					var html = document.documentElement;
+					var themeIcons = { system: 'fa-desktop', light: 'fa-sun-o', dark: 'fa-moon-o' };
+
+					function getStoredTheme() {
+						try { return localStorage.getItem(STORAGE_KEY) || 'system'; } catch (e) { return 'system'; }
+					}
+					function setStoredTheme(theme) {
+						try { localStorage.setItem(STORAGE_KEY, theme); } catch (e) {}
+					}
+					function prefersDark() {
+						return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+					}
+					function updateTriggerIcon(theme) {
+						var trigger = document.getElementById('theme-trigger');
+						if (!trigger) return;
+						trigger.className = 'theme-trigger fa ' + (themeIcons[theme] || themeIcons.system);
+					}
+					var DROPDOWN_DURATION = 200;
+					function setDropdownOpen(open) {
+						var wrap = document.getElementById('theme-switcher-wrap');
+						var dropdown = document.getElementById('theme-dropdown');
+						var trigger = document.getElementById('theme-trigger');
+						if (!wrap || !dropdown || !trigger) return;
+						if (open) {
+							dropdown.hidden = false;
+							trigger.setAttribute('aria-expanded', 'true');
+							requestAnimationFrame(function() {
+								wrap.classList.add('is-open');
+							});
+						} else {
+							wrap.classList.remove('is-open');
+							trigger.setAttribute('aria-expanded', 'false');
+							setTimeout(function() {
+								dropdown.hidden = true;
+							}, DROPDOWN_DURATION);
+						}
+					}
+					function applyTheme(theme) {
+						theme = theme || getStoredTheme();
+						html.setAttribute('data-theme', theme);
+						updateTriggerIcon(theme);
+						document.querySelectorAll('.theme-option').forEach(function(btn) {
+							btn.classList.toggle('active', btn.getAttribute('data-theme') === theme);
+						});
+					}
+					$(function() {
+						applyTheme();
+						$(document).on('click', '#theme-trigger', function(e) {
+							e.stopPropagation();
+							var wrap = document.getElementById('theme-switcher-wrap');
+							var isOpen = wrap.classList.contains('is-open');
+							setDropdownOpen(!isOpen);
+						});
+						$(document).on('click', '.theme-option', function() {
+							var theme = this.getAttribute('data-theme');
+							setStoredTheme(theme);
+							applyTheme(theme);
+							setDropdownOpen(false);
+						});
+						$(document).on('click', function() {
+							setDropdownOpen(false);
+						});
+						$(document).on('click', '#theme-switcher-wrap', function(e) {
+							e.stopPropagation();
+						});
+						if (window.matchMedia) {
+							window.matchMedia('(prefers-color-scheme: dark)').addListener(function() {
+								if (getStoredTheme() === 'system') applyTheme('system');
+							});
+						}
+					});
+				})();
+			</script>
 
 	</body>
 </html>
